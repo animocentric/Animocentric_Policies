@@ -427,11 +427,61 @@
       " and are not offered to the public.</p>\n" +
       '<ul class="app-grid">\n' +
       internalApps.map(card).join("\n") +
-      "\n</ul>";
+      "\n</ul>\n" +
+      '<h2>Delete your account</h2>\n' +
+      '<p><a href="delete-account.html">How to delete your account and data</a></p>';
 
     setHead(
       "Animocentric Policies — Privacy & Terms for all products",
       "Privacy Policies and Terms of Service for all Animocentric products, published by " + entity.legalName + "."
+    );
+    return { header: header(""), main: main, footer: footer() };
+  }
+
+  // Public account-deletion page. Google Play requires a web URL (not only an
+  // in-app path) that names the app, gives the steps, and says what is deleted
+  // and what is kept. One page covers every product.
+  function deleteAccountPage() {
+    var mail = esc(entity.email);
+    var appNames = apps
+      .filter(function (a) {
+        return a.audience === "public";
+      })
+      .map(function (a) {
+        return esc(a.name);
+      })
+      .join(", ");
+    var main =
+      '<div class="doc-head">\n' +
+      '  <p class="eyebrow">Your data</p>\n' +
+      "  <h1>Delete your Animocentric account</h1>\n" +
+      '  <p class="tagline">Applies to ' + appNames + ", published by " + esc(entity.legalName) + ".</p>\n" +
+      "</div>\n" +
+      "<h2>How to request deletion</h2>\n" +
+      "<ol>\n" +
+      '<li>Email <a href="mailto:' + mail + '?subject=Account%20deletion%20request">' + mail + "</a> from the email address you sign in with, with the subject <strong>Account deletion request</strong>.</li>\n" +
+      "<li>Tell us which app you use (for example Animopractice or Petfolio) and, if you are clinic staff, the name of your clinic.</li>\n" +
+      "<li>We may reply asking you to confirm with a one-time code sent to that address, so we know the request is really yours.</li>\n" +
+      "<li>We confirm by email once your account is deleted, within 30 days of your confirmed request.</li>\n" +
+      "</ol>\n" +
+      '<p class="muted">You don\'t need to delete the app first, and you can uninstall it at any time. Uninstalling alone does not delete your account.</p>\n' +
+      "<h2>What we delete</h2>\n" +
+      "<ul>\n" +
+      "<li>Your login: email address, password, and sign-in history</li>\n" +
+      "<li>Your profile: name, phone number, photo, and vet signature (if any)</li>\n" +
+      "<li>Device push-notification tokens and notification preferences</li>\n" +
+      "</ul>\n" +
+      "<h2>What we keep, and for how long</h2>\n" +
+      "<ul>\n" +
+      "<li><strong>Clinic records.</strong> Patient, medical, prescription, and billing records you created while working at a clinic belong to that clinic, not to your personal account. They stay with the clinic, and your name stays on entries you authored, because veterinary and financial records must stay complete and accurate.</li>\n" +
+      "<li><strong>Payment and tax records.</strong> Transaction references and invoices are kept for as long as Indian tax and accounting law requires (generally up to 8 years), then deleted.</li>\n" +
+      "<li><strong>Backups.</strong> Deleted data can stay in encrypted backups for up to 90 days before those backups are overwritten.</li>\n" +
+      "</ul>\n" +
+      '<p class="callout">If you are a clinic owner and want the whole clinic and all of its records deleted, say so in your email. We\'ll explain what has to be kept by law and export your data for you first if you ask.</p>\n' +
+      "<p>See each product's Privacy Policy on the <a href=\"index.html\">policies home page</a> for full details.</p>";
+    setHead(
+      "Delete your account | Animocentric",
+      "How to delete your Animocentric account and data, what is deleted, and what is kept."
     );
     return { header: header(""), main: main, footer: footer() };
   }
@@ -452,6 +502,7 @@
     var result;
     if (page === "privacy") result = renderPrivacy(appKey);
     else if (page === "terms") result = termsPage(appKey);
+    else if (page === "delete-account") result = deleteAccountPage();
     else result = indexPage();
 
     var root = document.getElementById("root");
