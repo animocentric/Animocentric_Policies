@@ -9,7 +9,7 @@ window.ANIMOCENTRIC_DATA = {
     email: "support@animocentric.com",
     phone: "9000102094",
     domain: "policies.animocentric.com",
-    effectiveDate: "September 18, 2026",
+    effectiveDate: "October 7, 2026",
     jurisdictionCity: "Hyderabad",
     jurisdictionState: "Telangana",
     governingLawNote:
@@ -178,13 +178,13 @@ window.ANIMOCENTRIC_DATA = {
       persona: "Veterinary clinic staff",
       audience: "public",
       description:
-        "Animopractice is the mobile companion to the Web Platform for clinic staff, providing access to appointments, pet records, certificates, and clinic subscription billing from a mobile device, using the same account and data as the Web Platform.",
+        "Animopractice is the mobile companion to the Web Platform for clinic staff, providing access to appointments, pet records, vaccinations, certificates, inventory, and clinic billing from a mobile device, using the same account and data as the Web Platform.",
       dataCollected: [
         {
           heading: "Account & identity",
           items: [
             "Name, email address, phone number, role, and clinic association",
-            "Login access is via a one-time passcode (OTP) sent to your registered email address",
+            "Sign-in uses your password plus a one-time passcode (OTP) sent to your registered email address",
           ],
         },
         {
@@ -206,16 +206,16 @@ window.ANIMOCENTRIC_DATA = {
           why: "if you choose to attach a photo to a pet record or document from within the app",
         },
       ],
-      thirdParties: ["firebase", "razorpay", "resend", "r2", "hostinger"],
+      thirdParties: ["firebase", "resend", "r2", "hostinger"],
       specificNotes: [
         "Animopractice uses Firebase Cloud Messaging (a Google service) to deliver push notifications to your device. This requires sending a device push token to Google's servers so notifications can be routed to your device; Google's handling of this token is governed by Google's own privacy policy, linked below.",
-        "Clinic subscription payments made in-app are processed using the Razorpay Checkout SDK, which may collect payment details directly from you and share limited transaction data (such as payment status) with us; we do not receive or store your full card details.",
+        "Animopractice does not sell anything in the app and does not collect payment card details. Clinic subscriptions are managed on the Animocentric web platform, under the Web Platform's terms.",
       ],
       terms: {
         natureOfService:
           "Animopractice provides clinic staff with mobile access to appointment, pet-record, certificate, and billing tools connected to the same account and data as the Web Platform.",
         payments:
-          "Clinic subscriptions may be purchased or renewed in-app via Razorpay. Subscription terms mirror those set out for the Web Platform.",
+          "The app does not offer in-app purchases. Clinic subscriptions are purchased and managed on the Web Platform, and the Web Platform's subscription terms apply.",
         paidFeature: null,
         marketplace: null,
       },

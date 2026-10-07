@@ -211,8 +211,10 @@
       crossBorderNote(app) +
       "\n<h2>Data retention</h2>\n" +
       "<p>We retain personal data for as long as your account remains active, and afterwards for as long as needed to comply with legal, regulatory, tax, or record-keeping obligations applicable to veterinary and financial records, resolve disputes, and enforce our agreements. When data is no longer required, we delete or anonymize it.</p>\n" +
+      "<h2>Deleting your account</h2>\n" +
+      "<p>Clinic staff can delete their account at any time from Account settings in the Animopractice app or on the Animocentric website; anyone can also ask us by email. Deletion erases your login and contact details straight away, while records the law requires us to keep are retained as described above. Full steps, and what is deleted and kept, are on our <a href=\"../delete-account.html\">Delete your account</a> page.</p>\n" +
       "<h2>Data security</h2>\n" +
-      "<p>We use industry-standard measures to protect personal data, including encrypted connections (HTTPS/TLS) between your device or browser and our servers, access controls limiting data access to authorized personnel, and one-time-passcode authentication instead of stored passwords. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>\n" +
+      "<p>We use industry-standard measures to protect personal data, including encrypted connections (HTTPS/TLS) between your device or browser and our servers, access controls limiting data access to authorized personnel, one-time-passcode verification at sign-in, and passwords stored only as salted one-way hashes, never in readable form. No method of transmission or storage is completely secure, and we cannot guarantee absolute security.</p>\n" +
       "<h2>Children's data</h2>\n" +
       "<p>The Service is intended for use by individuals aged 18 and above. We do not knowingly collect personal data directly from children. If you believe a child has provided us personal data without appropriate consent, please contact us using the details below so we can take appropriate action.</p>\n" +
       "<h2>Your rights under the DPDP Act, 2023</h2>\n" +
@@ -359,7 +361,7 @@
       "<h2>Termination</h2>\n" +
       "<p>We may suspend or terminate your access to the Service if you violate these Terms or if we reasonably believe your use poses a risk to the Service, other users, or " +
       esc(entity.legalName) +
-      ". You may stop using the Service and request account deletion at any time by contacting us.</p>\n" +
+      ". You may stop using the Service at any time. Clinic staff can delete their account from Account settings in the app or on the web, and anyone can request deletion by contacting us - see <a href=\"../delete-account.html\">Delete your account</a>.</p>\n" +
       "<h2>Dispute resolution and governing law</h2>\n" +
       "<p>These Terms are governed by the laws of India. Subject to applicable law, the courts of " +
       esc(entity.jurisdictionCity) +
@@ -457,27 +459,39 @@
       "  <h1>Delete your Animocentric account</h1>\n" +
       '  <p class="tagline">Applies to ' + appNames + ", published by " + esc(entity.legalName) + ".</p>\n" +
       "</div>\n" +
-      "<h2>How to request deletion</h2>\n" +
+      "<h2>Delete your account yourself</h2>\n" +
+      "<p>Clinic staff accounts (Animopractice and the Animocentric web dashboard) can be deleted instantly, without contacting us:</p>\n" +
+      "<ul>\n" +
+      "<li><strong>In the Animopractice app:</strong> open <strong>More &rarr; Account</strong>, tap <strong>Delete account</strong>, enter your password and type <strong>DELETE</strong> to confirm.</li>\n" +
+      "<li><strong>On the web:</strong> sign in at animocentric.com, open <strong>Account Settings</strong>, choose <strong>Delete my account</strong>, enter your password and type <strong>DELETE</strong> to confirm.</li>\n" +
+      "</ul>\n" +
+      "<p>Your account is deleted as soon as you confirm, and we email you a confirmation.</p>\n" +
+      "<h2>Delete by email</h2>\n" +
+      "<p>Pet owners using Petfolio, and anyone who can no longer sign in, can ask us instead:</p>\n" +
       "<ol>\n" +
       '<li>Email <a href="mailto:' + mail + '?subject=Account%20deletion%20request">' + mail + "</a> from the email address you sign in with, with the subject <strong>Account deletion request</strong>.</li>\n" +
-      "<li>Tell us which app you use (for example Animopractice or Petfolio) and, if you are clinic staff, the name of your clinic.</li>\n" +
-      "<li>We may reply asking you to confirm with a one-time code sent to that address, so we know the request is really yours.</li>\n" +
-      "<li>We confirm by email once your account is deleted, within 30 days of your confirmed request.</li>\n" +
+      "<li>Tell us which app you use and, if you are clinic staff, the name of your clinic.</li>\n" +
+      "<li>We may ask you to confirm with a one-time code sent to that address, so we know the request is really yours.</li>\n" +
+      "<li>We delete the account and confirm by email within 30 days of your confirmed request.</li>\n" +
       "</ol>\n" +
       '<p class="muted">You don\'t need to delete the app first, and you can uninstall it at any time. Uninstalling alone does not delete your account.</p>\n' +
       "<h2>What we delete</h2>\n" +
       "<ul>\n" +
-      "<li>Your login: email address, password, and sign-in history</li>\n" +
-      "<li>Your profile: name, phone number, photo, and vet signature (if any)</li>\n" +
-      "<li>Device push-notification tokens and notification preferences</li>\n" +
+      "<li>Your login: email address and password. You can no longer sign in, and every signed-in device is signed out.</li>\n" +
+      "<li>Your contact details: phone number and address</li>\n" +
+      "<li>Your professional details: licence number, vet profile, and vet signature (if any)</li>\n" +
+      "<li>Device push-notification tokens and browser notification subscriptions</li>\n" +
+      "<li>Any pending sign-in or verification codes</li>\n" +
       "</ul>\n" +
+      "<h2>If you are your clinic's only admin</h2>\n" +
+      "<p>Deleting the only admin account also <strong>closes the clinic</strong>: its subscription is cancelled so you are not charged again, other staff lose access, and the clinic's data is deleted within 30 days, except the records below that the law requires us to keep. To keep the clinic running, make another staff member an admin before you delete your account. Both the app and the website warn you before this happens.</p>\n" +
       "<h2>What we keep, and for how long</h2>\n" +
       "<ul>\n" +
       "<li><strong>Clinic records.</strong> Patient, medical, prescription, and billing records you created while working at a clinic belong to that clinic, not to your personal account. They stay with the clinic, and your name stays on entries you authored, because veterinary and financial records must stay complete and accurate.</li>\n" +
       "<li><strong>Payment and tax records.</strong> Transaction references and invoices are kept for as long as Indian tax and accounting law requires (generally up to 8 years), then deleted.</li>\n" +
       "<li><strong>Backups.</strong> Deleted data can stay in encrypted backups for up to 90 days before those backups are overwritten.</li>\n" +
       "</ul>\n" +
-      '<p class="callout">If you are a clinic owner and want the whole clinic and all of its records deleted, say so in your email. We\'ll explain what has to be kept by law and export your data for you first if you ask.</p>\n' +
+      '<p class="callout">Clinic owners who want a copy of their clinic\'s data before closing it can email us first and we will export it.</p>\n' +
       "<p>See each product's Privacy Policy on the <a href=\"index.html\">policies home page</a> for full details.</p>";
     setHead(
       "Delete your account | Animocentric",
