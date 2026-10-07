@@ -1,3 +1,10 @@
+> **Moved.** The live policies are now served by the main website at
+> **https://animocentric.com/policies/** (short links: `animocentric.com/delete-account`,
+> `animocentric.com/privacy/<app>`, `animocentric.com/terms/<app>`), from the
+> `policies/` folder of the client-website repo, which auto-deploys. Edit
+> `client-website/policies/assets/data.js` there. This repo and
+> policies.animocentric.com are kept only as the old copy.
+
 # policies.animocentric.com
 
 Privacy Policy / Terms of Service site for all Animocentric products. Plain HTML, CSS, and JavaScript — no Node.js, no build step, no server-side process required.

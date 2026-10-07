@@ -8,7 +8,7 @@ window.ANIMOCENTRIC_DATA = {
     address: "301, Plot 16, CBCID Colony, Hydernagar, Hyderabad, Telangana, India 500085",
     email: "support@animocentric.com",
     phone: "9000102094",
-    domain: "policies.animocentric.com",
+    domain: "animocentric.com/policies",
     effectiveDate: "October 7, 2026",
     jurisdictionCity: "Hyderabad",
     jurisdictionState: "Telangana",
